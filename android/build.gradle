@@ -14,19 +14,20 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 
- allprojects {
-   repositories {
-    
-        google()
-        maven { // (4)
-            url("$rootDir/../node_modules/detox/Detox-android")
+ subprojects {
+    // Apply common configurations to all sub-projects
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            project.android {
+                buildToolsVersion = rootProject.ext.buildToolsVersion
+            }
         }
-        maven { url 'https://www.jitpack.io' }
-   }
- }
+    }
+}
 
 apply plugin: "com.facebook.react.rootproject"
+

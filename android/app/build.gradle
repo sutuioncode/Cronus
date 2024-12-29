@@ -85,7 +85,7 @@ android {
         versionCode 1
         versionName "1.0"
         testBuildType System.getProperty('testBuildType', 'debug')
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner 'com.cronus.DetoxTestAppJUnitRunner'
     }
     signingConfigs {
         debug {
@@ -115,7 +115,10 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     
-    androidTestImplementation('com.wix:detox:+')
+    // noinspection GradleDynamicVersion
+    androidTestImplementation 'com.wix:detox:+'
+    androidTestImplementation 'com.linkedin.testbutler:test-butler-library:2.2.1'
+
     implementation 'androidx.appcompat:appcompat:1.1.0'
     
     if (hermesEnabled.toBoolean()) {
