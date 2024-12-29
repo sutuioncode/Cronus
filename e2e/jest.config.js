@@ -7,7 +7,7 @@ module.exports = {
   setupFilesAfterEnv: ["./setup.ts"],
   testRunner: "jest-circus/runner",
   testTimeout: 120000,
-  testMatch: ["**/*.e2e.js"],
+  testMatch: ["**/*.e2e.ts"],
   transform: {
     "\\.tsx?$": "ts-jest"
   },
