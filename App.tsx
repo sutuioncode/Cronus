@@ -5,9 +5,11 @@
  * @format
  */
 
-import React from 'react';
 import type { PropsWithChildren } from 'react';
+import React from 'react';
 import {
+  Alert,
+  DevSettings,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -97,6 +99,7 @@ function App(): React.JSX.Element {
   );
 }
 
+
 const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
@@ -116,5 +119,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// export default App;
-export { default } from './.storybook';
+export default App
