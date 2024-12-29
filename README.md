@@ -10,6 +10,9 @@ Cronus is a task manager application designed for Android and iOS platforms. Thi
 - **Authentication:** Secure Sign-in/Sign-out functionality.
 - **Meeting Integration:** Schedule and join meetings using Google Meet.
 
+
+[See more detailed feature set](https://github.com/sutuioncode/Cronus/wiki/Feature-Set)
+
 ## Tech Stack
 
 - **Frontend:** [React Native](https://reactnative.dev)
