@@ -5,17 +5,10 @@
 import {AppRegistry} from 'react-native';
 import App from './Root';
 import {name as appName} from './app.json';
+import {enableMocking} from './src/services/mocks/mock-network';
 
-function enableMocking() {
-  if (!__DEV__) {
-    return;
-  }
-
-  require('./polyfills/msw.polyfills');
-  const {server} = require('./src/services/mocks/server');
-  server.listen();
+if (__DEV__) {
+  enableMocking();
 }
-
-enableMocking();
 
 AppRegistry.registerComponent(appName, () => App);
